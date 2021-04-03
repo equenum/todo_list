@@ -1,0 +1,11 @@
+.todoCard {
+    width: 100%;
+    margin-bottom: 0.25em;
+}
+
+.todo {
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+}

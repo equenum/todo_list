@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./styles/WelcomeSection.css";
 
 class WelcomeItem extends React.Component {
     constructor() {
@@ -9,9 +10,18 @@ class WelcomeItem extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Welcome!</h1>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="welcome">
+                        <h1>TODO LIST</h1>
+                        <p>
+                            With <b>TODO LIST</b>, you can manage your goals without wasting time and 
+                            struggling to figure out priorities. Your productivity will get better, 
+                            you won’t forget things, your time management will improve and you will be 
+                            able to get your todos under control.
+                        </p>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -1,9 +1,8 @@
 import React from 'react';
 import WelcomeSection from './WelcomeSection';
 import TodoSection from './TodoSection';
+import "./styles/App.css";
 
-// TODO
-// Structure the project properly
 class App extends React.Component {
     constructor() {
         super();
@@ -12,9 +11,11 @@ class App extends React.Component {
     
     render() {
         return (
-            <div>
-                <WelcomeSection />
-                <TodoSection />
+            <div className="app">
+                <div className="container"> 
+                    <WelcomeSection />
+                    <TodoSection />
+                </div>
             </div>
         )    
     }

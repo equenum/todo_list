@@ -16,10 +16,15 @@ class InputForm extends React.Component {
         event.preventDefault();
         const newTodoText = this.state.todoText;
         this.props.createTodo(newTodoText);
+
+        this.setState({
+            todoText: ''
+        });
     }
 
     handleChange(event) {
         const {name, value} = event.target;
+
         this.setState({
             [name]: value
         });
@@ -27,22 +32,26 @@ class InputForm extends React.Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
-                <Form.Group>
-                    <Form.Label>Add</Form.Label>
-                    <Form.Control 
-                        type="text"
-                        value={this.state.todoText} 
-                        name="todoText" 
-                        placeholder="Create new Todo" 
-                        onChange={this.handleChange} 
-                    >
-                    </Form.Control>
-                </Form.Group>
-                <Button variant="primary mb-3" type="submit">
-                    Submit
-                </Button>
-            </Form>
+            <div className="row">
+                <div className="col-md-12">
+                    <Form onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                        <Form.Label>Add a new todo</Form.Label>
+                        <Form.Control 
+                            type="text"
+                            value={this.state.todoText} 
+                            name="todoText" 
+                            placeholder="Todo text" 
+                            onChange={this.handleChange} 
+                        >
+                        </Form.Control>
+                    </Form.Group>
+                    <Button variant="warning mb-3" type="submit">
+                        Add
+                    </Button>
+                    </Form>
+                </div>
+            </div>
         );
     }
 }

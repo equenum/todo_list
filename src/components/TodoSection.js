@@ -8,7 +8,7 @@ class TodoSection extends React.Component {
         this.state = { 
             todos: [
                 {
-                    text: 'Example todo. Create your own',
+                    text: 'Example todo (feel free to create your own)',
                     isCompleted: false,
                     isDeleted: false
                 }
@@ -20,17 +20,19 @@ class TodoSection extends React.Component {
     }
 
     createTodo(todoText) {
-        // check if input is not empty
-        // clean input window after submiting
-        const newTodo = {
-            text: todoText,
-            isCompleted: false,
-            isDeleted: false
-        };
-        
-        this.setState(prevState => {
-            return {todos: [...prevState.todos, newTodo] }
-        });
+        if (!todoText) {
+            alert('You forgot to enter the todo text =) Please try again');
+        } else {
+            const newTodo = {
+                text: todoText,
+                isCompleted: false,
+                isDeleted: false
+            };
+
+            this.setState(prevState => {
+                return {todos: [...prevState.todos, newTodo] }
+            });
+        }
     }
 
     markTodo(index) {
@@ -67,10 +69,12 @@ class TodoSection extends React.Component {
             />)
 
         return (
-            <div>
-                <InputForm createTodo={this.createTodo} />
-                <div className="todo-list">
-                        {todoItems}
+            <div className="row">
+                <div className="col-md-12">
+                    <InputForm createTodo={this.createTodo} />
+                    <div className="todo-list">
+                            {todoItems}
+                    </div>
                 </div>
             </div>
         );
