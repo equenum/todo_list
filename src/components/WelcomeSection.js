@@ -3,10 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles/WelcomeSection.css";
 
 class WelcomeItem extends React.Component {
-    constructor() {
-        super();
-        this.state = {};
-    }
+    state = {};
 
     render() {
         return (

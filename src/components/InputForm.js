@@ -3,16 +3,9 @@ import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class InputForm extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            todoText: ''
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    state = { todoText: '' };
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
         const newTodoText = this.state.todoText;
         this.props.createTodo(newTodoText);
@@ -22,7 +15,7 @@ class InputForm extends React.Component {
         });
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         const {name, value} = event.target;
 
         this.setState({

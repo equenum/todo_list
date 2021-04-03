@@ -4,26 +4,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles/TodoItem.css";
 
 class TodoItem extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            cardOnHoverStyle: null
-        };
-        this.handleDelete = this.handleDelete.bind(this);
-        this.handleMark = this.handleMark.bind(this);
-        this.handleCardOnMouseEnter = this.handleCardOnMouseEnter.bind(this);
-        this.handleCardOnMouseLeave = this.handleCardOnMouseLeave.bind(this);
-    }
+    state = { cardOnHoverStyle: null };
 
-    handleMark() {
+    handleMark = () => {
         this.props.markTodo(this.props.index);
     }
 
-    handleDelete(event) {
+    handleDelete = (event) => {
         this.props.deleteTodo(this.props.index);
     }
 
-    handleCardOnMouseEnter() {
+    handleCardOnMouseEnter = () => {
         const cardOnHoverStyle = {
             backgroundColor: "#ffc107" 
         }
@@ -33,7 +24,7 @@ class TodoItem extends React.Component {
         });
     }
 
-    handleCardOnMouseLeave() {
+    handleCardOnMouseLeave = () => {
         const cardOnHoverStyle = {
             backgroundColor: "white" 
         }

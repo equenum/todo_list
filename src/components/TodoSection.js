@@ -3,23 +3,17 @@ import InputForm from './InputForm';
 import TodoItem from './TodoItem';
 
 class TodoSection extends React.Component {
-    constructor() {
-        super();
-        this.state = { 
-            todos: [
-                {
-                    text: 'Example todo (feel free to create your own)',
-                    isCompleted: false,
-                    isDeleted: false
-                }
-            ]
-        };
-        this.createTodo = this.createTodo.bind(this);
-        this.markTodo = this.markTodo.bind(this);
-        this.deleteTodo = this.deleteTodo.bind(this);
-    }
+    state = { 
+        todos: [
+            {
+                text: 'Example todo (feel free to create your own)',
+                isCompleted: false,
+                isDeleted: false
+            }
+        ]
+    };
 
-    createTodo(todoText) {
+    createTodo = (todoText) => {
         if (!todoText) {
             alert('You forgot to enter the todo text =) Please try again');
         } else {
@@ -35,7 +29,7 @@ class TodoSection extends React.Component {
         }
     }
 
-    markTodo(index) {
+    markTodo = (index) => {
         const updatedTodos = [...this.state.todos];
         const targetTodo = updatedTodos[index];
         if (targetTodo.isCompleted) {
@@ -49,7 +43,7 @@ class TodoSection extends React.Component {
         });
     } 
 
-    deleteTodo(index) {
+    deleteTodo = (index) => {
         const updatedTodos = [...this.state.todos];
         updatedTodos[index].isDeleted = true;
 
